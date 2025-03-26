@@ -47,14 +47,14 @@ knitr::knit_hooks[["set"]](crop = knitr::hook_pdfcrop)
 library(tidyverse)
 library(ggpmthemes)
 library(patchwork)
-library(stars)
-library(gt)
 library(rnaturalearthdata)
 library(rnaturalearthhires)
 library(tidytext)
 library(janitor)
 library(units)
+library(sf)
 library(ggrepel)
+library(pins)
 
 theme_set(theme_light_modified(base_family = "Montserrat"))
 theme_update(
@@ -1055,7 +1055,7 @@ The data associated with the paper is available online with an associated DOI.
 #| fig-alt: "Bar plot showing the number of downloads per country for each dataset."
 url <- pins::board_url(
   list(
-    seanoe = "https://www.seanoe.org/html/stat/2022/uj4mfvvquq-philippemassicottetakuvikulavalca.xls"
+    seanoe = "https://www.seanoe.org/html/stat/2024/2cincttffo-philippemassicottetakuvikulavalca.xls"
   )
 )
 
