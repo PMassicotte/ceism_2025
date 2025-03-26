@@ -337,7 +337,7 @@ ggplot() +
 
 ## A note on geospatial data
 
-For example, _find all the health and social services network establishments_ within 5 km of **Vanier**.
+_Find all the health and social services network establishments_ within 5 km of **Vanier**.
 
 ```{r}
 #| message: false
@@ -347,21 +347,13 @@ For example, _find all the health and social services network establishments_ wi
 
 set.seed(123L)
 
-# Calculate centroids
 vanier <- quebec |>
-  filter(NOM == "Vanier") |>
-  st_centroid()
+  filter(NOM == "Vanier")
 
-# Calculate centroids
-centroids <- st_centroid(quebec)
-
-# Select Vanier and calculate its centroid
-vanier <- quebec |>
-  filter(NOM == "Vanier") |>
-  st_centroid()
+vanier_centroid <- st_centroid(vanier)
 
 # Create a distance matrix
-dist_matrix <- st_distance(pts, vanier)
+dist_matrix <- st_distance(pts, vanier_centroid)
 
 # Define a threshold (5 km)
 threshold <- set_units(5L, "km")
@@ -377,7 +369,7 @@ connections <- do.call(
   lapply(within_threshold, function(i) {
     st_linestring(rbind(
       st_coordinates(pts[i, ]),
-      st_coordinates(vanier)
+      st_coordinates(vanier_centroid)
     ))
   })
 )
@@ -387,6 +379,7 @@ connections_sf <- st_sf(geometry = connections, crs = st_crs(quebec))
 
 ggplot() +
   geom_sf(data = quebec, color = "grey75", fill = NA) +
+  geom_sf(data = vanier, color = "black", fill = "grey75") +
   geom_sf(data = pts, color = "red", size = 1L) +
   ggrepel::geom_text_repel(
     data = quebec,
@@ -398,10 +391,11 @@ ggplot() +
     color = "grey75"
   ) +
   geom_sf(
-    data = st_buffer(vanier, dist = threshold),
+    data = st_buffer(vanier_centroid, dist = threshold),
     fill = NA,
     color = "blue",
-    linetype = 2L
+    linetype = 2L,
+    linewidth = 0.5
   ) +
   geom_sf(data = connections_sf, color = "blue", linewidth = 0.25) +
   theme_minimal() +
