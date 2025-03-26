@@ -54,6 +54,7 @@ library(janitor)
 library(units)
 library(sf)
 library(ggrepel)
+library(magick)
 library(pins)
 
 theme_set(theme_light_modified(base_family = "Montserrat"))
