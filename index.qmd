@@ -284,6 +284,7 @@ In social sciences, researchers often collect or utilize spatial data to [analyz
 It is usually a better idea to work with spatial objects rather than tabular data.
 
 ```{r}
+#| label: quebec_map
 #| message: false
 #| out-width: 20%
 #| crop: true
@@ -339,6 +340,7 @@ ggplot() +
 Find all the health and social services network establishments within 5 km of **Vanier**.
 
 ```{r}
+#| label: vanier-health-services
 #| message: false
 #| out-width: 20%
 #| crop: true
@@ -1064,6 +1066,7 @@ The data associated with the paper is available online with an associated DOI.
 ##
 
 ```{r}
+#| label: data_paper
 #| echo: false
 #| fig-width: 12
 #| fig-height: 7
