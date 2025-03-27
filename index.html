@@ -220,7 +220,7 @@
             <br>
       <div class="logo-title" style="display: flex; justify-content: center">
         <div class="image-container">
-          <img src="img/logo/LOGO_CEISME_HORIZONTAL_TEXTE_RGB.png" height="230px" alt="Logo of the iid at ulaval">
+          <img src="img/logo/LOGO_CEISME_HORIZONTAL_TEXTE_RGB.png" height="230px" alt="Logo of the CEISM at ulaval">
           <img src="img/logo/ulaval.png" height="200px" alt="Laval University logo">
           <img src="img/logo/takuvik.png" height="180" alt="Takuvik logo">
         </div>
@@ -354,20 +354,21 @@
 <aside><div>
 <p>Data source: Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. <a href="https://allisonhorst.github.io/palmerpenguins/">https://allisonhorst.github.io/palmerpenguins/</a> Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span>.</p>
 </div></aside></section>
-<section id="geographic-file-formats" class="slide level2">
-<h2>Geographic file formats</h2>
-<p>In social sciences, researchers often collect or utilize spatial data to analyze patterns, relationships, and distributions across <span class="emphasize">geographic areas</span>.</p>
+<section id="geographic-data" class="slide level2">
+<h2>Geographic data</h2>
+<p>In social sciences, researchers often collect or utilize spatial data to <span class="emphasize">analyze patterns</span>, relationships, and distributions <span class="emphasize">across geographic areas</span>.</p>
 <ol type="1">
 <li><p><strong>Mental health symptoms</strong>: Mapping areas with higher anxiety or depression prevalence.</p></li>
 <li><p><strong>Access to services</strong>: Proximity to clinics or mental health resources.</p></li>
 <li><p><strong>Environmental factors</strong>: Urban density, noise, or socioeconomic data.</p></li>
-<li><p><strong>Community resilience</strong>: Locations of support networks or programs.</p></li>
-<li><p><strong>Demographics</strong>: Age, income, or education distribution linked to mental health.</p></li>
 </ol>
 </section>
-<section id="geographic-file-formats-1" class="slide level2">
+<section id="geographic-file-formats" class="slide level2">
 <h2>Geographic file formats</h2>
-<p>These files contain information on geographic features such as <span class="emphasize">points, lines or polygons</span>. There are a ton of <a href="https://gisgeography.com/gis-formats/">geographical file formats</a>, but here are some that are particularly popular.</p>
+<ul>
+<li><p>Spatial data differs from tabular data in that it contains information on geographic features such as <span class="emphasize">points, lines or polygons</span>.</p></li>
+<li><p>There are a ton of <a href="https://gisgeography.com/gis-formats/">geographical file formats</a>, but here are some that are particularly popular.</p></li>
+</ul>
 <div>
 <ul>
 <li class="fragment"><p>ESRI shapefile (<code>.SHP</code>)</p>
@@ -379,14 +380,14 @@
 </ul>
 </div>
 </section>
-<section id="a-note-on-geospatial-data" class="slide level2">
-<h2>A note on geospatial data</h2>
+<section id="geospatial-data" class="slide level2">
+<h2>Geospatial data</h2>
 <p>It is usually a better idea to work with spatial objects rather than tabular data.</p>
 
 <img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:20.0%"></section>
-<section id="a-note-on-geospatial-data-1" class="slide level2">
-<h2>A note on geospatial data</h2>
-<p><em>Find all the health and social services network establishments</em> within 5 km of <strong>Vanier</strong>.</p>
+<section id="geospatial-data-1" class="slide level2">
+<h2>Geospatial data</h2>
+<p>Find all the health and social services network establishments within 5 km of <strong>Vanier</strong>.</p>
 
 <img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:20.0%"></section></section>
 <section>
@@ -484,7 +485,7 @@
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Interesting resources:</strong></p>
+<p><strong>Additional resources:</strong></p>
 <p><a href="https://www.youtube.com/watch?v=ES1LTlnpLMk">How to name files - Jennifer Bryan (YouTube)</a></p>
 <p><a href="https://speakerdeck.com/jennybc/how-to-name-files-the-sequel">How to name files - Jennifer Bryan (Slides)</a></p>
 </div>
@@ -579,9 +580,9 @@
 <li><p>A common problem is that the columns represent values, not variable names.</p></li>
 </ul>
 <div class="fragment">
-<p><span class="emphasize">Example: a datasheet with species abundance data.</span></p>
+<p><span class="emphasize">Example: mental health survey across various campuses.</span></p>
 <div class="center-align">
-<p><img data-src="img/excalidraw/species_wide.png" style="width:70.0%" alt="Image showing a frequent method to enter count data in spreadsheet software."></p>
+<p><img data-src="img/excalidraw/data_wide.png" style="width:70.0%" alt="Image showing a frequent method to enter count data in spreadsheet software."></p>
 </div>
 </div>
 </section>
@@ -589,7 +590,7 @@
 <h2>How data should be structured</h2>
 <p>After proper transformations, the data is now tidy (<a href="https://en.wikipedia.org/wiki/Database_normalization">or in normal form</a>). <span class="emphasize">Each column is a variable, and each row is an observation.</span></p>
 <div class="center-align">
-<p><img data-src="img/excalidraw/species_wide_to_long.png" style="width:90.0%" alt="Image showing a frequent method to enter count data in spreadsheet software."></p>
+<p><img data-src="img/excalidraw/data_long.png" style="width:100.0%" alt="Image showing a frequent method to enter count data in spreadsheet software."></p>
 </div>
 </section>
 <section id="keep-your-data-as-rectangle-tables" class="slide level2">

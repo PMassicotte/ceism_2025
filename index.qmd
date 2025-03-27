@@ -251,9 +251,9 @@ This dataset contains 4 variables (columns). [The first line generally includes 
 Data source: Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. [https://allisonhorst.github.io/palmerpenguins/](https://allisonhorst.github.io/palmerpenguins/) Artwork by @allison_horst.
 :::
 
-## Geographic file formats
+## Geographic data
 
-In social sciences, researchers often collect or utilize spatial data to analyze patterns, relationships, and distributions across [geographic areas]{.emphasize}.
+In social sciences, researchers often collect or utilize spatial data to [analyze patterns]{.emphasize}, relationships, and distributions [across geographic areas]{.emphasize}.
 
 1. **Mental health symptoms**: Mapping areas with higher anxiety or depression prevalence.
 
@@ -261,13 +261,11 @@ In social sciences, researchers often collect or utilize spatial data to analyze
 
 3. **Environmental factors**: Urban density, noise, or socioeconomic data.
 
-4. **Community resilience**: Locations of support networks or programs.
-
-5. **Demographics**: Age, income, or education distribution linked to mental health.
-
 ## Geographic file formats
 
-These files contain information on geographic features such as [points, lines or polygons]{.emphasize}. There are a ton of [geographical file formats](https://gisgeography.com/gis-formats/), but here are some that are particularly popular.
+- Spatial data differs from tabular data in that it contains information on geographic features such as [points, lines or polygons]{.emphasize}.
+
+- There are a ton of [geographical file formats](https://gisgeography.com/gis-formats/), but here are some that are particularly popular.
 
 ::: {.incremental}
 
@@ -281,7 +279,7 @@ These files contain information on geographic features such as [points, lines or
 
 :::
 
-## A note on geospatial data
+## Geospatial data
 
 It is usually a better idea to work with spatial objects rather than tabular data.
 
@@ -290,6 +288,7 @@ It is usually a better idea to work with spatial objects rather than tabular dat
 #| out-width: 20%
 #| crop: true
 #| dev: ragg_png
+#| dev.args: {bg: "transparent"}
 
 # https://www.donneesquebec.ca/recherche/dataset/vque_14
 # https://www.donneesquebec.ca/recherche/dataset/fichiers-cartographiques-m02-des-installations-et-etablissements/resource/4c2dd423-0646-46bd-86c0-d938b066deb8
@@ -328,22 +327,23 @@ ggplot() +
   theme_minimal() +
   theme(
     panel.background = element_rect(fill = "transparent", color = NA),
+    plot.background = element_rect(fill = "transparent", color = NA),
     axis.title = element_blank(),
     axis.text = element_blank(),
-    panel.grid = element_blank(),
-    plot.background = element_rect(fill = NULL, color = NA)
+    panel.grid = element_blank()
   )
 ```
 
-## A note on geospatial data
+## Geospatial data
 
-_Find all the health and social services network establishments_ within 5 km of **Vanier**.
+Find all the health and social services network establishments within 5 km of **Vanier**.
 
 ```{r}
 #| message: false
 #| out-width: 20%
 #| crop: true
 #| dev: ragg_png
+#| dev.args: {bg: "transparent"}
 
 set.seed(123L)
 
@@ -393,11 +393,11 @@ ggplot() +
   geom_sf(
     data = st_buffer(vanier_centroid, dist = threshold),
     fill = NA,
-    color = "blue",
+    color = "#016392",
     linetype = 2L,
     linewidth = 0.5
   ) +
-  geom_sf(data = connections_sf, color = "blue", linewidth = 0.25) +
+  geom_sf(data = connections_sf, color = "#016392", linewidth = 0.25) +
   theme_minimal() +
   theme(
     panel.background = element_rect(fill = "transparent", color = NA),
@@ -522,7 +522,7 @@ _Imagine that you have to create a file containing temperature data from a weath
 
 . . .
 
-**Interesting resources:**
+**Additional resources:**
 
 [How to name files - Jennifer Bryan (YouTube)](https://www.youtube.com/watch?v=ES1LTlnpLMk)
 
@@ -626,11 +626,11 @@ The main idea is that data should be organized in columns with [each column repr
 
 . . .
 
-[Example: a datasheet with species abundance data.]{.emphasize}
+[Example: mental health survey across various campuses.]{.emphasize}
 
 ::: {.center-align}
 
-![](img/excalidraw/species_wide.png){width=70% fig-alt="Image showing a frequent method to enter count data in spreadsheet software."}
+![](img/excalidraw/data_wide.png){width=70% fig-alt="Image showing a frequent method to enter count data in spreadsheet software."}
 
 :::
 
@@ -640,7 +640,7 @@ After proper transformations, the data is now tidy ([or in normal form](https://
 
 ::: {.center-align}
 
-![](img/excalidraw/species_wide_to_long.png){width=90% fig-alt="Image showing a frequent method to enter count data in spreadsheet software."}
+![](img/excalidraw/data_long.png){width=100% fig-alt="Image showing a frequent method to enter count data in spreadsheet software."}
 
 :::
 
