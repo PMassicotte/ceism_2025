@@ -253,7 +253,7 @@ Data source: Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipe
 
 ## Geographic file formats
 
-In social sciences, researchers often collect or utilize spatial data to analyze patterns, relationships, and distributions across geographic areas.
+In social sciences, researchers often collect or utilize spatial data to analyze patterns, relationships, and distributions across [geographic areas]{.emphasize}.
 
 1. **Mental health symptoms**: Mapping areas with higher anxiety or depression prevalence.
 
@@ -1063,7 +1063,7 @@ df_viz <- df |>
   mutate(country = fct_na_value_to_level(country, level = "Unknown")) |>
   mutate(country = fct_lump(country, n = 9L)) |>
   count(dataset_title, country) |>
-  mutate(dataset_title = str_wrap(dataset_title, 55L)) |>
+  mutate(dataset_title = str_wrap(dataset_title, 40L)) |>
   mutate(country2 = country) |>
   mutate(country = reorder_within(country, n, dataset_title))
 
@@ -1081,7 +1081,7 @@ df_viz |>
   theme(
     legend.position = "none",
     strip.background = element_blank(),
-    strip.text = element_text(size = 10L, face = "bold", color = "white"),
+    strip.text = element_text(size = 8L, face = "bold", color = "white"),
     axis.text = element_text(size = 10L, face = "bold", color = "white"),
     text = element_text(color = "white"),
     panel.border = element_blank(),
@@ -1089,7 +1089,8 @@ df_viz |>
     panel.grid = element_blank(),
     panel.background = element_rect(fill = "#3c3c3c"),
     plot.background = element_rect(fill = "#3c3c3c"),
-    plot.title = element_text(size = 18L, hjust = 0.5, color = "white")
+    plot.title = element_text(size = 18L, hjust = 0.5, color = "white"),
+    plot.margin = margin(1L, 1L, 1L, 1L, "cm")
   )
 ```
 
