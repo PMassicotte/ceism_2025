@@ -253,7 +253,7 @@ Data source: Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipe
 
 ## Geographic data
 
-In social sciences, researchers often collect or utilize spatial data to [analyze patterns]{.emphasize}, relationships, and distributions [across geographic areas]{.emphasize}.
+In sciences, researchers often collect or utilize spatial data to [analyze patterns]{.emphasize}, relationships, and distributions [across geographic areas]{.emphasize}.
 
 1. **Mental health symptoms**: Mapping areas with higher anxiety or depression prevalence.
 
@@ -279,9 +279,7 @@ In social sciences, researchers often collect or utilize spatial data to [analyz
 
 :::
 
-## Geospatial data
-
-It is usually a better idea to work with spatial objects rather than tabular data.
+##
 
 ```{r}
 #| label: quebec_map
@@ -315,7 +313,7 @@ pts <- read_sf(
   st_transform(32187L)
 
 ggplot() +
-  geom_sf(data = quebec, color = "black", fill = NA) +
+  geom_sf(data = quebec, color = "grey75", fill = NA) +
   ggrepel::geom_text_repel(
     data = quebec,
     aes(label = NOM, geometry = geometry),
@@ -335,9 +333,7 @@ ggplot() +
   )
 ```
 
-## Geospatial data
-
-Find all the health and social services network establishments within 5 km of **Vanier**.
+##
 
 ```{r}
 #| label: vanier-health-services
@@ -434,8 +430,8 @@ There are a few rules to adopt when naming files:
 
 This will ensure that the files are recognized by most operating systems and software.
 
-- [{{< fa check >}}]{style="color: #34A74BFF;"} `meeting_notes_jan2023.docx`
 - [{{< fa times >}}]{style="color: #E6352FFF;"} `meeting notes(jan2023).docx`
+- [{{< fa check >}}]{style="color: #34A74BFF;"} `meeting_notes_jan2023.docx`
 
 ## File naming basic rules
 
@@ -628,7 +624,7 @@ The main idea is that data should be organized in columns with [each column repr
 
 . . .
 
-[Example: mental health survey across various campuses.]{.emphasize}
+[Example: mental health survey across various locations.]{.emphasize}
 
 ::: {.center-align}
 
