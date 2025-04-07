@@ -333,6 +333,10 @@ ggplot() +
   )
 ```
 
+::: {aside}
+[https://publications.msss.gouv.qc.ca/msss/fichiers/statistiques/cartes/Etablissements.zip]{.smallest}
+:::
+
 ##
 
 ```{r}
@@ -404,6 +408,10 @@ ggplot() +
     panel.grid = element_blank()
   )
 ```
+
+::: {aside}
+[https://publications.msss.gouv.qc.ca/msss/fichiers/statistiques/cartes/Etablissements.zip]{.smallest}
+:::
 
 # File naming and project organization {background-color="#2C404A"}
 
@@ -580,6 +588,14 @@ If a script changes the content of a raw data file and [saves it in the same fil
 
 :::
 
+## Project directory structure
+
+::: {.center-align}
+
+![](img/excalidraw/project_structure_faded.png){width=70% fig-alt="Schematic showing a project directory structure. Same at the previous slide, but with faded colors."}
+
+:::
+
 # Tidy data {background-color="#2C404A"}
 
 ::: {.center-align}
@@ -732,19 +748,19 @@ Do not be that person 😩😖😠😤😣🤦‍♀️🤦‍♂️😑😓
 
 ::: {.incremental}
 
-- Provide information about abbreviations.
+- Try avoiding abbreviations.
 
-  - `tmin` vs `temperature_minimum`
+  - `anx` vs `anxiety_score`
+  - `dep` vs `depression_severity`
 
 - Explicitly state the unit of each variable:
 
-  - `depth_m`, `area_km2`, `distance_km`, `wind_speed_ms`
+  - `consultation_time_hrs`, `medication_dose_mg`, `treatment_weeks`
 
 - Be consistent with variable names across files:
 
-  - `temp` vs `temperature`
-  - `user_name` vs `username`
-  - `last_updated` vs `updated_at`
+  - `patient_id` vs `participant_id`
+  - `assessment_date` vs `evaluation_date`
 
 :::
 
@@ -1115,16 +1131,14 @@ df_viz |>
 
 ## Open data repositories
 
-- Polar Data Catalogue [https://www.polardata.ca/](https://www.polardata.ca/)
 - Scholars Portal Dataverse [https://dataverse.scholarsportal.info/](https://dataverse.scholarsportal.info/)
+
 - Federated Research Data Repository [https://www.frdr-dfdr.ca/repo/?locale=fr](https://www.frdr-dfdr.ca/repo/?locale=fr)
-- Pangaea [https://www.pangaea.de/](https://www.pangaea.de/)
-- Dryad [https://datadryad.org](https://datadryad.org)
-- Catalogue de données ouverte OGSL [https://ogsl.ca/fr/](https://ogsl.ca/fr/)
+
 - Zenodo [https://zenodo.org/](https://zenodo.org/)
+
 - Figshare [https://figshare.com/](https://figshare.com/)
-- Seanoe [https://www.seanoe.org/](https://www.seanoe.org/)
-- NFS Arctic Data Center [https://arcticdata.io/](https://arcticdata.io/)
+
 - The Dataverse Project [https://dataverse.org/](https://dataverse.org/)
 
 # Take home messages {background-color="#2C404A"}
