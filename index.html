@@ -6,10 +6,10 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+  <meta name="generator" content="quarto-1.6.43">
 
   <meta name="author" content="Philippe Massicotte">
   <meta name="dcterms.date" content="2025-04-08">
@@ -383,11 +383,17 @@
 <section id="section" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/quebec_map-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:20.0%"></section>
+<img data-src="index_files/figure-revealjs/quebec_map-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:20.0%"><div class="{aside}">
+<p><span class="smallest">https://publications.msss.gouv.qc.ca/msss/fichiers/statistiques/cartes/Etablissements.zip</span></p>
+</div>
+</section>
 <section id="section-1" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/vanier-health-services-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:20.0%"></section></section>
+<img data-src="index_files/figure-revealjs/vanier-health-services-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:20.0%"><div class="{aside}">
+<p><span class="smallest">https://publications.msss.gouv.qc.ca/msss/fichiers/statistiques/cartes/Etablissements.zip</span></p>
+</div>
+</section></section>
 <section>
 <section id="file-naming-and-project-organization" class="title-slide slide level1 center" data-background-color="#2C404A">
 <h1>File naming and project organization</h1>
@@ -532,6 +538,12 @@
 <div class="center-align">
 <p><img data-src="img/excalidraw/project_structure.png" style="width:60.0%" alt="Schematic showing a project directory structure."></p>
 </div>
+</section>
+<section id="project-directory-structure-2" class="slide level2">
+<h2>Project directory structure</h2>
+<div class="center-align">
+<p><img data-src="img/excalidraw/project_structure_faded.png" style="width:70.0%" alt="Schematic showing a project directory structure. Same at the previous slide, but with faded colors."></p>
+</div>
 </section></section>
 <section>
 <section id="tidy-data" class="title-slide slide level1 center" data-background-color="#2C404A">
@@ -654,19 +666,19 @@
 <h2>Variable names</h2>
 <div>
 <ul>
-<li class="fragment"><p>Provide information about abbreviations.</p>
+<li class="fragment"><p>Try avoiding abbreviations.</p>
 <ul>
-<li class="fragment"><code>tmin</code> vs <code>temperature_minimum</code></li>
+<li class="fragment"><code>anx</code> vs <code>anxiety_score</code></li>
+<li class="fragment"><code>dep</code> vs <code>depression_severity</code></li>
 </ul></li>
 <li class="fragment"><p>Explicitly state the unit of each variable:</p>
 <ul>
-<li class="fragment"><code>depth_m</code>, <code>area_km2</code>, <code>distance_km</code>, <code>wind_speed_ms</code></li>
+<li class="fragment"><code>consultation_time_hrs</code>, <code>medication_dose_mg</code>, <code>treatment_weeks</code></li>
 </ul></li>
 <li class="fragment"><p>Be consistent with variable names across files:</p>
 <ul>
-<li class="fragment"><code>temp</code> vs <code>temperature</code></li>
-<li class="fragment"><code>user_name</code> vs <code>username</code></li>
-<li class="fragment"><code>last_updated</code> vs <code>updated_at</code></li>
+<li class="fragment"><code>patient_id</code> vs <code>participant_id</code></li>
+<li class="fragment"><code>assessment_date</code> vs <code>evaluation_date</code></li>
 </ul></li>
 </ul>
 </div>
@@ -939,17 +951,11 @@
 <section id="open-data-repositories" class="slide level2">
 <h2>Open data repositories</h2>
 <ul>
-<li>Polar Data Catalogue <a href="https://www.polardata.ca/">https://www.polardata.ca/</a></li>
-<li>Scholars Portal Dataverse <a href="https://dataverse.scholarsportal.info/">https://dataverse.scholarsportal.info/</a></li>
-<li>Federated Research Data Repository <a href="https://www.frdr-dfdr.ca/repo/?locale=fr">https://www.frdr-dfdr.ca/repo/?locale=fr</a></li>
-<li>Pangaea <a href="https://www.pangaea.de/">https://www.pangaea.de/</a></li>
-<li>Dryad <a href="https://datadryad.org">https://datadryad.org</a></li>
-<li>Catalogue de données ouverte OGSL <a href="https://ogsl.ca/fr/">https://ogsl.ca/fr/</a></li>
-<li>Zenodo <a href="https://zenodo.org/">https://zenodo.org/</a></li>
-<li>Figshare <a href="https://figshare.com/">https://figshare.com/</a></li>
-<li>Seanoe <a href="https://www.seanoe.org/">https://www.seanoe.org/</a></li>
-<li>NFS Arctic Data Center <a href="https://arcticdata.io/">https://arcticdata.io/</a></li>
-<li>The Dataverse Project <a href="https://dataverse.org/">https://dataverse.org/</a></li>
+<li><p>Scholars Portal Dataverse <a href="https://dataverse.scholarsportal.info/">https://dataverse.scholarsportal.info/</a></p></li>
+<li><p>Federated Research Data Repository <a href="https://www.frdr-dfdr.ca/repo/?locale=fr">https://www.frdr-dfdr.ca/repo/?locale=fr</a></p></li>
+<li><p>Zenodo <a href="https://zenodo.org/">https://zenodo.org/</a></p></li>
+<li><p>Figshare <a href="https://figshare.com/">https://figshare.com/</a></p></li>
+<li><p>The Dataverse Project <a href="https://dataverse.org/">https://dataverse.org/</a></p></li>
 </ul>
 </section></section>
 <section>
