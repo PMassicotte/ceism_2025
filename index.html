@@ -367,7 +367,7 @@
 <h2>Geographic file formats</h2>
 <ul>
 <li><p>Spatial data differs from tabular data in that it contains information on geographic features such as <span class="emphasize">points, lines or polygons</span>.</p></li>
-<li><p>There are a ton of <a href="https://gisgeography.com/gis-formats/">geographical file formats</a>, but here are some that are particularly popular.</p></li>
+<li><p>There are many <a href="https://gisgeography.com/gis-formats/">geographical file formats</a>, but here are some that are particularly popular.</p></li>
 </ul>
 <div>
 <ul>
@@ -378,6 +378,35 @@
 <li class="fragment"><p>GeoJSON (<code>.json</code>, <code>.geojson</code>, JSON variant with simple geographical features)</p></li>
 <li class="fragment"><p>GeoPackage (<code>.gpkg</code>)</p></li>
 </ul>
+</div>
+</section>
+<section id="geographical-data" class="slide level2">
+<h2>Geographical data</h2>
+<p>The <code>.geojson</code> format is an open-source JSON-based format for storing geographical features and their attributes.</p>
+<blockquote>
+<p>Fichier cartographique relatif à la localisation des installations du réseau de la santé et des services sociaux.</p>
+</blockquote>
+<div class="medium">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href=""></a><span class="ot">[</span></span>
+<span id="cb1-2"><a href=""></a>  <span class="fu">{</span></span>
+<span id="cb1-3"><a href=""></a>    <span class="dt">"ETAB_NOM_A"</span><span class="fu">:</span> <span class="st">"CIUSSS de la Capitale-Nationale"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href=""></a>    <span class="dt">"ADRESSE"</span><span class="fu">:</span> <span class="st">"2915, avenue du Bourg-Royal"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href=""></a>    <span class="dt">"geometry"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Point"</span><span class="fu">,</span> <span class="dt">"coordinates"</span><span class="fu">:</span> <span class="ot">[</span><span class="fl">249916.9008</span><span class="ot">,</span> <span class="fl">5191041.7226</span><span class="ot">]</span> <span class="fu">}</span></span>
+<span id="cb1-6"><a href=""></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-7"><a href=""></a>  <span class="fu">{</span></span>
+<span id="cb1-8"><a href=""></a>    <span class="dt">"ETAB_NOM_A"</span><span class="fu">:</span> <span class="st">"CHU de Québec – UL"</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href=""></a>    <span class="dt">"ADRESSE"</span><span class="fu">:</span> <span class="st">"11, côte du Palais"</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href=""></a>    <span class="dt">"geometry"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Point"</span><span class="fu">,</span> <span class="dt">"coordinates"</span><span class="fu">:</span> <span class="ot">[</span><span class="fl">250544.4158</span><span class="ot">,</span> <span class="fl">5186451.0535</span><span class="ot">]</span> <span class="fu">}</span></span>
+<span id="cb1-11"><a href=""></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-12"><a href=""></a>  <span class="fu">{</span></span>
+<span id="cb1-13"><a href=""></a>    <span class="dt">"ETAB_NOM_A"</span><span class="fu">:</span> <span class="st">"Centre d'hébergement et de soins de longue durée Côté-J"</span><span class="fu">,</span></span>
+<span id="cb1-14"><a href=""></a>    <span class="dt">"ADRESSE"</span><span class="fu">:</span> <span class="st">"880, avenue Painchaud"</span><span class="fu">,</span></span>
+<span id="cb1-15"><a href=""></a>    <span class="dt">"geometry"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Point"</span><span class="fu">,</span> <span class="dt">"coordinates"</span><span class="fu">:</span> <span class="ot">[</span><span class="fl">246695.8913</span><span class="ot">,</span> <span class="fl">5183458.8756</span><span class="ot">]</span> <span class="fu">}</span></span>
+<span id="cb1-16"><a href=""></a>  <span class="fu">}</span></span>
+<span id="cb1-17"><a href=""></a><span class="ot">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="{aside}">
+<p><span class="smallest">https://publications.msss.gouv.qc.ca/msss/fichiers/statistiques/cartes/Etablissements.zip</span></p>
 </div>
 </section>
 <section id="section" class="slide level2">
@@ -690,9 +719,9 @@
 <p><img data-src="img/screenshots/invalid_multibyte_string.png" style="width:70.0%" alt="Screenshot showing an error message in R when trying to read a file with a special character."></p>
 </div>
 <div class="fragment">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>r<span class="sc">$</span><span class="er">&gt;</span> <span class="fu">read_csv</span>(<span class="st">"myfile.csv"</span>)</span>
-<span id="cb1-2"><a href=""></a>Rows<span class="sc">:</span> <span class="dv">104937</span> Columns<span class="sc">:</span> <span class="dv">1</span></span>
-<span id="cb1-3"><a href=""></a>Error <span class="cf">in</span> <span class="fu">nchar</span>(x, <span class="st">"width"</span>) <span class="sc">:</span> invalid multibyte string, element <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>r<span class="sc">$</span><span class="er">&gt;</span> <span class="fu">read_csv</span>(<span class="st">"myfile.csv"</span>)</span>
+<span id="cb2-2"><a href=""></a>Rows<span class="sc">:</span> <span class="dv">104937</span> Columns<span class="sc">:</span> <span class="dv">1</span></span>
+<span id="cb2-3"><a href=""></a>Error <span class="cf">in</span> <span class="fu">nchar</span>(x, <span class="st">"width"</span>) <span class="sc">:</span> invalid multibyte string, element <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <aside><div>
