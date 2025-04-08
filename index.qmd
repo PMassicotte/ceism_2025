@@ -265,7 +265,7 @@ In sciences, researchers often collect or utilize spatial data to [analyze patte
 
 - Spatial data differs from tabular data in that it contains information on geographic features such as [points, lines or polygons]{.emphasize}.
 
-- There are a ton of [geographical file formats](https://gisgeography.com/gis-formats/), but here are some that are particularly popular.
+- There are many [geographical file formats](https://gisgeography.com/gis-formats/), but here are some that are particularly popular.
 
 ::: {.incremental}
 
@@ -277,6 +277,40 @@ In sciences, researchers often collect or utilize spatial data to [analyze patte
 
 - GeoPackage (`.gpkg`)
 
+:::
+
+## Geographical data
+
+The `.geojson` format is an open-source JSON-based format for storing geographical features and their attributes.
+
+> Fichier cartographique relatif à la localisation des installations du réseau de la santé et des services sociaux.
+
+::: {.medium}
+
+```json
+[
+  {
+    "ETAB_NOM_A": "CIUSSS de la Capitale-Nationale",
+    "ADRESSE": "2915, avenue du Bourg-Royal",
+    "geometry": { "type": "Point", "coordinates": [249916.9008, 5191041.7226] }
+  },
+  {
+    "ETAB_NOM_A": "CHU de Québec – UL",
+    "ADRESSE": "11, côte du Palais",
+    "geometry": { "type": "Point", "coordinates": [250544.4158, 5186451.0535] }
+  },
+  {
+    "ETAB_NOM_A": "Centre d'hébergement et de soins de longue durée Côté-J",
+    "ADRESSE": "880, avenue Painchaud",
+    "geometry": { "type": "Point", "coordinates": [246695.8913, 5183458.8756] }
+  }
+]
+```
+
+:::
+
+::: {aside}
+[https://publications.msss.gouv.qc.ca/msss/fichiers/statistiques/cartes/Etablissements.zip]{.smallest}
 :::
 
 ##
